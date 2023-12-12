@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -21,11 +21,8 @@ PokemonCard.propTypes = {
 	pokemon: PropTypes.shape({
 		name: PropTypes.string.isRequired,
 		imgSrc: PropTypes.string,
-	}).isRequired,
+	})
 };
-
-
-
 
 
 export default PokemonCard;
