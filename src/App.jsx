@@ -36,20 +36,10 @@ function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
   const currentPokemon = pokemonList[pokemonIndex];
 
-  const goToPreviousPokemon = () => {
-    if (pokemonIndex > 0) {
-      setPokemonIndex(prevIndex => prevIndex - 1);
-    }
-  };
-
-  const goToNextPokemon = () => {
-    setPokemonIndex((index) => (index < pokemonList.length - 1 ? index + 1 : index));
-  };
-
   return (
     <div className="app">
       <PokemonCard pokemon={currentPokemon} />
-      <NavBar previous={goToPreviousPokemon} next={goToNextPokemon} />
+      <NavBar pokemonList={pokemonList} onPokemonClick={setPokemonIndex} />
     </div>
   );
 }
